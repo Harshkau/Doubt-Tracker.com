@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link  class="icon"rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShl93v6kL6fsXx42ixg5I88ACn1jRONchMbg&usqp=CAU"  /
+>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+           
+           
+        }
+
+        .login-container {
+            width: 90%; /* Adjust container width */
+            max-width: 400px; /* Maximum width for larger screens */
+            padding: 20px;
+            background-color: rgba(251, 248, 248, 0.548);
+            opacity: 70%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(253, 251, 251, 0.835);
+            padding-right: 30px;
+            margin:20px;
+            border:2px solid rgb(212, 208, 208);
+            
+            
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="email"],
+        .login-container input[type="password"],
+        .login-container input[type="submit"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #6a7e9e;
+            width: 100%;
+            margin-left:10px ;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #463db9;
+        }
+
+        #loginForm {
+            padding: 20px;
+            margin: 0;
+        }
+
+        @media (min-width: 768px) {
+            /* For tablets and larger screens */
+            .login-container {
+                width: 400px; /* Adjust container width for larger screens */
+            }
+          
+            
+
+        }
+        #name{
+            border-radius: 10px;
+            font-family:inherit;
+            border:none;
+            background-color:transparent;
+             
+        }
+        #email  {
+            border-radius: 10px;font-family:inherit;
+            border:none;
+            background:transparent ;
+             
+        }
+        #password{
+            border-radius: 10px;font-family:inherit;
+            border:none;
+            background-color:transparent;
+            border-color: blanchedalmond;
+             
+        }
+        .fa-solid{
+            padding-left:20px;
+            margin: 5px;
+            place-items: center;
+        }
+        input:focus{
+             border:white 1px solid;
+             border-color: blanchedalmond;
+             background-color:transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container animate__animated animate__bounceInDown">
+        <h2>Login<i class="fa-solid fa-book-open-reader fa-flip"></i></h2> 
+        <form class="input-container" id="loginForm">
+            <i class="fa-solid fa-user"></i>
+
+            <input type="text" id="name" placeholder="Name" required>
+            <i class="fa-solid fa-envelope"></i>
+            
+
+            <input type="email" id="email" placeholder="Email" required>
+            <i class="fa-solid fa-key"></i>
+
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Code for form submission
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting
+
+                // Get the values from the form
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+                // Validate email format (simple validation for demonstration)
+                var emailRegex = /\S+@\S+\.\S+/;
+                if (!emailRegex.test(email)) {
+                    alert("Invalid email format. Please enter a valid email address.");
+                    return;
+                }
+
+                // Check if other fields are not empty
+                if (!name || !email || !password) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                // Perform other actions such as sending data to server or redirecting
+                // For demonstration, we'll just display the values
+                alert("Name: " + name + "\nEmail: " + email + "\nPassword: " + password);
+            });
+        });
+    </script>
+</body>
+</html>
