@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <link  class="icon"rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShl93v6kL6fsXx42ixg5I88ACn1jRONchMbg&usqp=CAU"  /
+>
   <link  class="icon"rel="icon" href="https://i.postimg.cc/VkhftWcj/doubt-tracker.jpg ">  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -21,7 +23,6 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
            
            
         }
-
         .login-container {
             width: 90%; /* Adjust container width */
             max-width: 400px; /* Maximum width for larger screens */
@@ -36,11 +37,9 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
             
             
         }
-
         .login-container h2 {
             text-align: center;
         }
-
         .login-container input[type="text"],
         .login-container input[type="email"],
         .login-container input[type="password"],
@@ -51,7 +50,6 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
             border: 1px solid #ccc;
             border-radius: 50px;
         }
-
         .login-container input[type="submit"] {
             background-color: #6a7e9e;
             width: 100%;
@@ -60,16 +58,13 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
         .login-container input[type="submit"]:hover {
             background-color: #463db9;
         }
-
         #loginForm {
             padding: 20px;
             margin: 0;
         }
-
         @media (min-width: 768px) {
             /* For tablets and larger screens */
             .login-container {
@@ -77,7 +72,6 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
             }
           
             
-
         }
         #name{
             border-radius: 10px;
@@ -116,43 +110,35 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
         <h2>Login<i class="fa-solid fa-book-open-reader fa-flip"></i></h2> 
         <form class="input-container" id="loginForm">
             <i class="fa-solid fa-user"></i>
-
             <input type="text" id="name" placeholder="Name" required>
             <i class="fa-solid fa-envelope"></i>
             
-
             <input type="email" id="email" placeholder="Email" required>
             <i class="fa-solid fa-key"></i>
-
             <input type="password" id="password" placeholder="Password" required>
             <input type="submit" value="Login">
         </form>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Code for form submission
             document.getElementById("loginForm").addEventListener("submit", function(event) {
                 event.preventDefault(); // Prevent the form from submitting
-
                 // Get the values from the form
                 var name = document.getElementById("name").value;
                 var email = document.getElementById("email").value;
                 var password = document.getElementById("password").value;
-
                 // Validate email format (simple validation for demonstration)
                 var emailRegex = /\S+@\S+\.\S+/;
                 if (!emailRegex.test(email)) {
                     alert("Invalid email format. Please enter a valid email address.");
                     return;
                 }
-
                 // Check if other fields are not empty
                 if (!name || !email || !password) {
                     alert("Please fill in all fields.");
                     return;
                 }
-
                 // Perform other actions such as sending data to server or redirecting
                 // For demonstration, we'll just display the values
                 alert("Name: " + name + "\nEmail: " + email + "\nPassword: " + password);
